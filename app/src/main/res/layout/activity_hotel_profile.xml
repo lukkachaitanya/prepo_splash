@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:clickable="false"
+    android:focusable="false"
+    android:scrollbarSize="0.0dip">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/layout_bottom">
+
+        <LinearLayout
+            android:id="@+id/first_name_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/include_venue_image"
+                layout="@layout/cell_image_gallery_button"
+                android:layout_width="fill_parent"
+                android:layout_height="198.0dip" />
+
+            <TextView
+                android:id="@+id/venue_closed"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:gravity="center_horizontal"
+                android:padding="5.0dip"
+                android:text="@string/closed_during_hours_msg"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/venue_info_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20.0dip"
+                android:lineSpacingMultiplier="1.5" />
+
+            <TextView
+                android:id="@+id/address_label"
+                android:layout_width="fill_parent"
+                android:layout_height="75.0dip"
+                android:background="@drawable/map_placeholder"
+                android:drawableLeft="@drawable/map_placeholder_pin"
+                android:drawablePadding="10.0dip"
+                android:drawableRight="@drawable/map_placeholder_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="70.0dip"
+                android:paddingRight="20.0dip"
+                android:textColor="@color/reserve_map_address"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:id="@+id/venue_description"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20.0dip"
+                android:gravity="center_vertical"
+                android:lineSpacingMultiplier="1.5" />
+
+            <LinearLayout
+                android:id="@+id/attire_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/reserve_text_enabled_background"
+                android:orientation="horizontal"
+                android:padding="15.0dip">
+
+                <TextView
+                    android:id="@+id/venue_attire_label"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_weight="1.0"
+                    android:text="@string/attire"
+                    android:textAllCaps="true"
+                    android:textColor="@color/reserve_venue_details_items"
+                    android:textSize="14.0sp" />
+
+                <TextView
+                    android:id="@+id/venue_attire"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="right"
+                    android:textColor="@color/reserve_venue_details_items"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/price_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/reserve_text_enabled_background"
+                android:orientation="horizontal"
+                android:padding="15.0dip">
+
+                <TextView
+                    android:id="@+id/venue_price_label"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_weight="1.0"
+                    android:text="@string/price"
+                    android:textAllCaps="true"
+                    android:textColor="@color/reserve_venue_details_items"
+                    android:textSize="14.0sp" />
+
+                <TextView
+                    android:id="@+id/venue_price"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="right"
+                    android:textColor="@color/reserve_venue_details_items"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hours_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="1.0dip"
+                android:background="@drawable/venue_details_selector"
+                android:orientation="horizontal"
+                android:padding="15.0dip">
+
+                <TextView
+                    android:id="@+id/venue_open_day"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_weight="1.0"
+                    android:textAllCaps="true"
+                    android:textColor="@color/reserve_venue_details_items"
+                    android:textSize="14.0sp" />
+
+                <TextView
+                    android:id="@+id/venue_open_time"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:drawablePadding="5.0dip"
+                    android:drawableRight="@drawable/hoursarrow"
+                    android:gravity="right"
+                    android:textAllCaps="true"
+                    android:textColor="@color/reserve_venue_details_items"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cancel_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="1.0dip"
+                android:background="@drawable/venue_details_selector"
+                android:orientation="horizontal"
+                android:padding="15.0dip">
+
+                <TextView
+                    android:id="@+id/venue_cancel_policy"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:drawableRight="@drawable/hoursarrow"
+                    android:text="@string/cancellation_policy"
+                    android:textAllCaps="true"
+                    android:textColor="@color/reserve_venue_details_items"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="20.0dip"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/venue_menu_button"
+                    style="@style/WhiteButton"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:duplicateParentState="true"
+                        android:src="@drawable/detailviewrestaurant" />
+
+                    <TextView
+                        android:id="@+id/venue_menu_button_title"
+                        style="@style/WhiteButtonTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
+                        android:paddingRight="6.0dip"
+                        android:text="@string/menu" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/venue_website_button"
+                    style="@style/WhiteButton"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:duplicateParentState="true"
+                        android:src="@drawable/detailviewlink" />
+
+                    <TextView
+                        android:id="@+id/venue_website_button_title"
+                        style="@style/WhiteButtonTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:duplicateParentState="true"
+                        android:paddingRight="9.0dip"
+                        android:text="@string/website" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/venue_note"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20.0dip"
+                android:lineSpacingMultiplier="1.5" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="62.5dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bottom_button_box_border"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/continue_button"
+            style="@style/GoldButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip"
+            android:text="@string/request_a_table" />
+    </LinearLayout>
+
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/progress_wheel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone" />
+</RelativeLayout>
